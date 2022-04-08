@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>Document</title>
+
+    <script src="https://unpkg.com/boxicons@2.1.2/dist/boxicons.js"></script>
+</head>
+<body id="converter">
+    <header>
+        <nav>
+            <ul>
+                <div>GP</div>
+                <div id="button">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" style="fill: white;msFilter:;margin-top: -3px;margin-left: 10px;"><path d="M19 11h-6V5h-2v6H5v2h6v6h2v-6h6z"></path></svg>
+                </div>
+            </ul>
+            <ul id="list2">
+                <li><a href="#converter" style="color: white;">Converter</a></li>
+                <li><a href="#features" style="color: white;">Features</a></li>
+                <li><a href="#documentation" style="color: white;">Documentation</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="converter-container">
+        <div class="container">
+            <div>
+                <h4>Input</h4>
+                <textarea id="inputArea" cols="30" rows="10"></textarea>
+            </div>
+            <div id="btn-convert">Convert</div>
+            <div>
+                <h4>Output</h4>
+                <textarea id="outputArea" cols="30" rows="10"></textarea>
+            </div>
+        </div>
+    </div>
+    <div id="features" class="features-container">
+        <h1 style="color: white;">Features</h1>
+        <ul class="featuresCheck">
+            <li>Rune to Text</li>
+            <li>Text to Runes</li>
+            <li>Runes to Value</li>
+            <li>Runes to Letter (Exact)</li>
+            <li>Runes to Letter (Easy)</li>
+        </ul>
+    </div>
+    <div id="documentation" class="documentation-container">
+        <h1 style="color: white;">Documentation</h1>
+        <p>Coming Soon! It will be a tool for frequency analyzation of certain runes.</p>
+    </div>
+    <script src="./js/app.js"></script>
+    <script src="./index.js"></script>
+</body>
+</html>
