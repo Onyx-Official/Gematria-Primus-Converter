@@ -1,7 +1,7 @@
 * {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
 }
 
 html {
@@ -14,11 +14,11 @@ body
 }
 
 a {
-  text-decoration: none;
+    text-decoration: none;
 }
 
 li {
-  list-style-type: none;
+    list-style-type: none;
 }
 
 #btn-convert {
@@ -27,10 +27,11 @@ li {
 
 header
 {
+    z-index: 1000;
     height: 7vh;
     width: 100%;
     background-color: #FF7F50;
-    position: sticky;
+    position: fixed;
     top: 0px;
     left: 0;
 }
@@ -58,15 +59,20 @@ div.converter-container {
     width: 100%;
     height: 100vh;
 
+    z-index: 1;
+
     background-color: white;
 }
 
-div.converter-container > div.container {
+div.converter-container > div.container {   
+    position: sticky;
+    top: 10vh;
+    z-index: 0;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
-    height: 100%;
+    height: 80%;
 }
 
 div.converter-container > div.container > div:nth-child(2) {
@@ -84,12 +90,15 @@ div.converter-container > div.container > div:nth-child(2) {
 div.converter-container > div.container > div > textarea
 {
     width: 400px;
-    height: 300px;
-
+    height: 200px;
+    resize: none;
     font-size: 20px;
 }
 
 div.features-container {
+    z-index: 2;
+    position: sticky;
+    top: 10px;
     width: 100%;
     height: 100vh;
 
@@ -124,6 +133,8 @@ div.features-container > ul.featuresCheck > li {
 }
 
 div.documentation-container {
+    position: sticky;
+    z-index: 3;
     width: 100%;
     height: 100vh;
 
@@ -148,7 +159,7 @@ div.documentation-container > p {
 }
 
 #button > svg {
-    transition: 200ms ease-in-out;
+    transition: background 200ms ease-in-out;
 }
 
 #button > svg:hover {
@@ -157,40 +168,55 @@ div.documentation-container > p {
 }
 
 @media screen and (max-width: 800px) {
-    #button {
-        display: block;
-    }
+    div.converter-container > div.container > div > textarea {
+    height: 50vw;
+    width: 40vw;
+}
+#button {
+    display: block;
+}
 
-    header > nav {
-        flex-direction: column;
-    }
+header {
+    height: 8vh;
+}
+header > nav {
+    flex-direction: column;
+}
 
-    header > nav > ul:nth-child(1) {
-        display: flex;
-        flex-direction: row;
-    }
+header > nav > ul:nth-child(1) {
+    display: flex;
+    flex-direction: row;
+}
 
+header > nav > ul:nth-child(2) {
+    transition: 200ms ease-in-out;
+
+    position: absolute;
+    flex-direction: column;
+    display: flex;
+    height: 30vh;
+    justify-content: space-around;
+    width: 100%;
+    top: 7vh;
+    background-color: #FF7F50;
+}
+
+header > nav > ul:nth-child(2) > li {
+    transition: background 200ms ease-in-out;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+header > nav > ul:nth-child(2) > li:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+
+@media screen and (min-width: 801px) {
     header > nav > ul:nth-child(2) {
-        position: absolute;
-        flex-direction: column;
-        display: none;
-        height: 30vh;
-        justify-content: space-around;
-        width: 100%;
-        top: 7vh;
-        background-color: #FF7F50;
-        transition: background 200ms ease-in-out;
-    }
-
-    header > nav > ul:nth-child(2) > li {
-        width: 100%;
-        height: 100%;
         display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-
-    header > nav > ul:nth-child(2) > li:hover {
-        background-color: rgba(255, 255, 255, 0.3);
     }
 }
